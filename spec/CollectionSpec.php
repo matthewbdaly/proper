@@ -18,4 +18,14 @@ class CollectionSpec extends ObjectBehavior
     {
         $this->shouldHaveType(Collection::class);
     }
+
+    function it_implements_countable()
+    {
+        $this->shouldImplement('Countable');
+    }
+
+    function it_can_count_correctly()
+    {
+        $this->count()->shouldReturn(0);
+    }
 }
