@@ -110,4 +110,16 @@ class CollectionSpec extends ObjectBehavior
         $this->beConstructedWith($items);
         $this->key()->shouldReturn(0);
     }
+
+    function it_can_move_forward()
+    {
+        $items = [
+            'foo',
+            'bar'
+        ];
+        $this->beConstructedWith($items);
+        $this->key()->shouldReturn(0);
+        $this->next();
+        $this->key()->shouldReturn(1);
+    }
 }
