@@ -2,7 +2,7 @@
 
 namespace Matthewbdaly\Proper;
 
-class Collection implements \Countable, \ArrayAccess, \Iterator
+class Collection implements \Countable, \ArrayAccess, \Iterator, \Serializable
 {
     protected $items;
 
@@ -65,5 +65,13 @@ class Collection implements \Countable, \ArrayAccess, \Iterator
     public function valid()
     {
         return isset($this->items[$this->position]);
+    }
+
+    public function serialize()
+    {
+    }
+
+    public function unserialize($data)
+    {
     }
 }

@@ -140,4 +140,9 @@ class CollectionSpec extends ObjectBehavior
     {
         $this->valid()->shouldReturn(false);
     }
+
+    function it_implements_serializable()
+    {
+        $this->shouldImplement('Serializable');
+    }
 }
