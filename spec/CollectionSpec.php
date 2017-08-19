@@ -141,8 +141,18 @@ class CollectionSpec extends ObjectBehavior
         $this->valid()->shouldReturn(false);
     }
 
-    function it_implements_serializable()
+    function it_implements_json_serializable()
     {
-        $this->shouldImplement('Serializable');
+        $this->shouldImplement('JsonSerializable');
+    }
+
+    function it_can_json_serialize()
+    {
+        $items = [
+            'foo',
+            'bar'
+        ];
+        $this->beConstructedWith($items);
+        $this->jsonSerialize()->shouldReturn(json_encode($items));
     }
 }
