@@ -1,0 +1,4 @@
+suites:
+    test_suite:
+        namespace: Matthewbdaly\Proper
+        psr4_prefix: Matthewbdaly\Proper
