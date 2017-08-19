@@ -49,6 +49,7 @@ class Collection implements \Countable, \ArrayAccess, \Iterator
 
     public function key()
     {
+        return $this->position;
     }
 
     public function next()

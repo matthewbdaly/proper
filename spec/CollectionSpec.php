@@ -100,4 +100,14 @@ class CollectionSpec extends ObjectBehavior
         $this->beConstructedWith($items);
         $this->current()->shouldReturn('foo');
     }
+
+    function it_can_get_key()
+    {
+        $items = [
+            'foo',
+            'bar'
+        ];
+        $this->beConstructedWith($items);
+        $this->key()->shouldReturn(0);
+    }
 }
