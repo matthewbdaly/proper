@@ -63,4 +63,44 @@ class StrSpec extends ObjectBehavior
         $this->offsetGet(1)->shouldReturn('a');
         $this->count()->shouldReturn(44);
     }
+
+    function it_implements_traversable()
+    {
+        $this->shouldImplement('Traversable');
+    }
+
+    function it_implements_iterator()
+    {
+        $this->shouldImplement('Iterator');
+    }
+
+    function it_can_get_current_position()
+    {
+        $this->current()->shouldReturn('I');
+    }
+
+    function it_can_get_key()
+    {
+        $this->key()->shouldReturn(0);
+    }
+
+    function it_can_move_forward()
+    {
+        $this->key()->shouldReturn(0);
+        $this->next();
+        $this->key()->shouldReturn(1);
+    }
+
+    function it_can_rewind()
+    {
+        $this->next();
+        $this->key()->shouldReturn(1);
+        $this->rewind();
+        $this->key()->shouldReturn(0);
+    }
+
+    function it_can_validate()
+    {
+        $this->valid()->shouldReturn(true);
+    }
 }

@@ -4,10 +4,13 @@ namespace Matthewbdaly\Proper;
 
 use Countable;
 use ArrayAccess;
+use Iterator;
 
-class Str implements Countable, ArrayAccess
+class Str implements Countable, ArrayAccess, Iterator
 {
     protected $string;
+
+    protected $position = 0;
 
     public function __construct(string $string = '')
     {
@@ -46,5 +49,30 @@ class Str implements Countable, ArrayAccess
     public function offsetUnset($offset)
     {
         $this->string = substr_replace($this->string, '', $offset, 1);
+    }
+
+    public function current()
+    {
+        return $this->string[$this->position];
+    }
+
+    public function key()
+    {
+        return $this->position;
+    }
+
+    public function next()
+    {
+        ++$this->position;
+    }
+
+    public function rewind()
+    {
+        $this->position = 0;
+    }
+
+    public function valid()
+    {
+        return isset($this->string[$this->position]);
     }
 }
