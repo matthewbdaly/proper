@@ -8,6 +8,12 @@ use Prophecy\Argument;
 
 class StrSpec extends ObjectBehavior
 {
+    function let()
+    {
+        $str = 'I am the very model of a modern major general';
+        $this->beConstructedWith($str);
+    }
+
     function it_is_initializable()
     {
         $this->shouldHaveType(Str::class);
@@ -16,6 +22,11 @@ class StrSpec extends ObjectBehavior
     function it_implements_countable()
     {
         $this->shouldImplement('Countable');
+    }
+
+    function it_can_count_correctly()
+    {
+        $this->count()->shouldReturn(45);
     }
 
     function it_can_be_called_statically()
