@@ -35,4 +35,32 @@ class StrSpec extends ObjectBehavior
         $this->beConstructedThrough('make', [$str]);
         $this->count()->shouldReturn(45);
     }
+
+    function it_implements_array_access()
+    {
+        $this->shouldImplement('ArrayAccess');
+    }
+
+    function it_can_confirm_offset_exists()
+    {
+        $this->offsetExists(0)->shouldReturn(true);
+    }
+
+    function it_can_get_offset()
+    {
+        $this->offsetGet(0)->shouldReturn('I');
+    }
+
+    function it_can_set_offset()
+    {
+        $this->offsetSet(0, 'A');
+        $this->offsetGet(0)->shouldReturn('A');
+    }
+
+    function it_can_unset_offset()
+    {
+        $this->offsetUnset(1);
+        $this->offsetGet(1)->shouldReturn('a');
+        $this->count()->shouldReturn(44);
+    }
 }
