@@ -2,7 +2,13 @@
 
 namespace Matthewbdaly\Proper;
 
-class Collection implements \Countable, \ArrayAccess, \Iterator, \JsonSerializable
+use Countable;
+use ArrayAccess;
+use Iterator;
+use JsonSerializable;
+use Matthewbdaly\Proper\Contracts\Collectable;
+
+class Collection implements Countable, ArrayAccess, Iterator, JsonSerializable, Collectable
 {
     protected $items;
 

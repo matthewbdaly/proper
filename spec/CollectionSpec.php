@@ -155,4 +155,9 @@ class CollectionSpec extends ObjectBehavior
         $this->beConstructedWith($items);
         $this->jsonSerialize()->shouldReturn(json_encode($items));
     }
+
+    function it_implements_collectable()
+    {
+        $this->shouldImplement('Matthewbdaly\Proper\Contracts\Collectable');
+    }
 }
