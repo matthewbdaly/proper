@@ -28,4 +28,9 @@ class CollectionSpec extends ObjectBehavior
     {
         $this->count()->shouldReturn(0);
     }
+
+    function it_implements_array_access()
+    {
+        $this->shouldImplement('ArrayAccess');
+    }
 }

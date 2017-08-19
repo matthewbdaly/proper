@@ -2,7 +2,7 @@
 
 namespace Matthewbdaly\Proper;
 
-class Collection implements \Countable
+class Collection implements \Countable, \ArrayAccess
 {
     protected $items;
 
@@ -14,5 +14,21 @@ class Collection implements \Countable
     public function count()
     {
         return count($this->items);
+    }
+
+    public function offsetExists($offset)
+    {
+    }
+
+    public function offsetGet($offset)
+    {
+    }
+
+    public function offsetSet($offset, $value)
+    {
+    }
+
+    public function offsetUnset($offset)
+    {
     }
 }
