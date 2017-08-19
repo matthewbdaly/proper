@@ -26,11 +26,25 @@ class CollectionSpec extends ObjectBehavior
 
     function it_can_count_correctly()
     {
-        $this->count()->shouldReturn(0);
+        $items = [
+            'foo' => 'bar'
+        ];
+        $this->beConstructedWith($items);
+        $this->count()->shouldReturn(1);
     }
 
     function it_implements_array_access()
     {
         $this->shouldImplement('ArrayAccess');
+    }
+
+    function it_can_confirm_offset_exists()
+    {
+        $items = [
+            'foo',
+            'bar'
+        ];
+        $this->beConstructedWith($items);
+        $this->offsetExists(0)->shouldReturn(true);
     }
 }
