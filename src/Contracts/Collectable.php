@@ -15,4 +15,6 @@ interface Collectable
     public function filter(Closure $callback);
 
     public function reject(Closure $callback);
+
+    public function reduce(Closure $callback, $initial = 0);
 }

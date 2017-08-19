@@ -225,4 +225,13 @@ class CollectionSpec extends ObjectBehavior
             'baz' => 3
         ]);
     }
+
+    function it_implements_reduce()
+    {
+        $items = [1, 2, 3];
+        $this->beConstructedWith($items);
+        $this->reduce(function ($total, $item) {
+            return $total += $item;
+        })->shouldReturn(6);
+    }
 }

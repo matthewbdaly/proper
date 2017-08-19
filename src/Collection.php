@@ -105,4 +105,13 @@ class Collection implements Countable, ArrayAccess, Iterator, JsonSerializable, 
             return ! $callback($item);
         });
     }
+
+    public function reduce(Closure $callback, $initial = 0)
+    {
+        $accumulator = $initial;
+        foreach ($this->items as $item) {
+            $accumulator = $callback($accumulator, $item);
+        }
+        return $accumulator;
+    }
 }
