@@ -193,4 +193,20 @@ class CollectionSpec extends ObjectBehavior
             return ($item * $item * $item);
         })->toArray()->shouldReturn([1,8,27]);
     }
+
+    function it_implements_filter()
+    {
+        $items = [
+            'foo' => 1,
+            'bar' => 2,
+            'baz' => 3
+        ];
+        $this->beConstructedWith($items);
+        $this->filter(function ($v) {
+            return $v > 1;
+        })->toArray()->shouldReturn([
+            'bar' => 2,
+            'baz' => 3
+        ]);
+    }
 }
