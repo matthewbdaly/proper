@@ -80,4 +80,14 @@ class CollectionSpec extends ObjectBehavior
         $this->offsetGet(1)->shouldReturn(null);
         $this->count()->shouldReturn(1);
     }
+
+    function it_implements_traversable()
+    {
+        $this->shouldImplement('Traversable');
+    }
+
+    function it_implements_iterator()
+    {
+        $this->shouldImplement('Iterator');
+    }
 }

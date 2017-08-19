@@ -2,7 +2,7 @@
 
 namespace Matthewbdaly\Proper;
 
-class Collection implements \Countable, \ArrayAccess
+class Collection implements \Countable, \ArrayAccess, \Iterator
 {
     protected $items;
 
@@ -38,5 +38,25 @@ class Collection implements \Countable, \ArrayAccess
     public function offsetUnset($offset)
     {
         unset($this->items[$offset]);
+    }
+
+    public function current()
+    {
+    }
+
+    public function key()
+    {
+    }
+
+    public function next()
+    {
+    }
+
+    public function rewind()
+    {
+    }
+
+    public function valid()
+    {
     }
 }
