@@ -28,6 +28,11 @@ class Collection implements \Countable, \ArrayAccess
 
     public function offsetSet($offset, $value)
     {
+        if (is_null($offset)) {
+            $this->items[] = $value;
+        } else {
+            $this->items[$offset] = $value;
+        }
     }
 
     public function offsetUnset($offset)
