@@ -90,4 +90,14 @@ class CollectionSpec extends ObjectBehavior
     {
         $this->shouldImplement('Iterator');
     }
+
+    function it_can_get_current_position()
+    {
+        $items = [
+            'foo',
+            'bar'
+        ];
+        $this->beConstructedWith($items);
+        $this->current()->shouldReturn('foo');
+    }
 }

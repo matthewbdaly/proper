@@ -6,6 +6,8 @@ class Collection implements \Countable, \ArrayAccess, \Iterator
 {
     protected $items;
 
+    protected $position = 0;
+
     public function __construct(array $items = [])
     {
         $this->items = $items;
@@ -42,6 +44,7 @@ class Collection implements \Countable, \ArrayAccess, \Iterator
 
     public function current()
     {
+        return $this->items[$this->position];
     }
 
     public function key()
