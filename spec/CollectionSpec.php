@@ -122,4 +122,17 @@ class CollectionSpec extends ObjectBehavior
         $this->next();
         $this->key()->shouldReturn(1);
     }
+
+    function it_can_rewind()
+    {
+        $items = [
+            'foo',
+            'bar'
+        ];
+        $this->beConstructedWith($items);
+        $this->next();
+        $this->key()->shouldReturn(1);
+        $this->rewind();
+        $this->key()->shouldReturn(0);
+    }
 }
