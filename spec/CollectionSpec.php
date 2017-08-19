@@ -8,6 +8,12 @@ use Prophecy\Argument;
 
 class CollectionSpec extends ObjectBehavior
 {
+    function let()
+    {
+        $items = [];
+        $this->beConstructedWith($items);
+    }
+
     function it_is_initializable()
     {
         $this->shouldHaveType(Collection::class);
