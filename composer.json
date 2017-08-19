@@ -13,5 +13,10 @@
             "email": "matthewbdaly@gmail.com"
         }
     ],
-    "require": {}
+    "require": {},
+    "autoload": {
+        "psr-4": {
+            "Matthewbdaly\\Proper\\": "src/"
+        }
+    }
 }
