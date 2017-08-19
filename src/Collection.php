@@ -37,5 +37,6 @@ class Collection implements \Countable, \ArrayAccess
 
     public function offsetUnset($offset)
     {
+        unset($this->items[$offset]);
     }
 }

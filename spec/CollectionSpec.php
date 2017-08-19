@@ -68,4 +68,16 @@ class CollectionSpec extends ObjectBehavior
         $this->offsetSet(0, 'baz');
         $this->offsetGet(0)->shouldReturn('baz');
     }
+
+    function it_can_unset_offset()
+    {
+        $items = [
+            'foo',
+            'bar'
+        ];
+        $this->beConstructedWith($items);
+        $this->offsetUnset(1);
+        $this->offsetGet(1)->shouldReturn(null);
+        $this->count()->shouldReturn(1);
+    }
 }
