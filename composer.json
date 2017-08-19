@@ -4,7 +4,8 @@
     "type": "library",
     "require-dev": {
         "phpspec/phpspec": "^4.0",
-        "squizlabs/php_codesniffer": "^3.0"
+        "squizlabs/php_codesniffer": "^3.0",
+        "psy/psysh": "^0.8.11"
     },
     "license": "MIT",
     "authors": [
