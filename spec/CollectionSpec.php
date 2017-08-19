@@ -209,4 +209,20 @@ class CollectionSpec extends ObjectBehavior
             'baz' => 3
         ]);
     }
+
+    function it_implements_reject()
+    {
+        $items = [
+            'foo' => 1,
+            'bar' => 2,
+            'baz' => 3
+        ];
+        $this->beConstructedWith($items);
+        $this->reject(function ($v) {
+            return $v <= 1;
+        })->toArray()->shouldReturn([
+            'bar' => 2,
+            'baz' => 3
+        ]);
+    }
 }

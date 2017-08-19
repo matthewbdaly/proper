@@ -98,4 +98,11 @@ class Collection implements Countable, ArrayAccess, Iterator, JsonSerializable, 
     {
         return new static(array_filter($this->items, $callback));
     }
+
+    public function reject(Closure $callback)
+    {
+        return $this->filter(function ($item) use ($callback) {
+            return ! $callback($item);
+        });
+    }
 }
