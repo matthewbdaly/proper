@@ -135,4 +135,9 @@ class CollectionSpec extends ObjectBehavior
         $this->rewind();
         $this->key()->shouldReturn(0);
     }
+
+    function it_can_validate()
+    {
+        $this->valid()->shouldReturn(false);
+    }
 }

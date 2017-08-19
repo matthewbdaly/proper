@@ -64,5 +64,6 @@ class Collection implements \Countable, \ArrayAccess, \Iterator
 
     public function valid()
     {
+        return isset($this->items[$this->position]);
     }
 }
