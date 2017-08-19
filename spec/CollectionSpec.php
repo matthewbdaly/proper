@@ -47,4 +47,14 @@ class CollectionSpec extends ObjectBehavior
         $this->beConstructedWith($items);
         $this->offsetExists(0)->shouldReturn(true);
     }
+
+    function it_can_get_offset()
+    {
+        $items = [
+            'foo',
+            'bar'
+        ];
+        $this->beConstructedWith($items);
+        $this->offsetGet(0)->shouldReturn('foo');
+    }
 }

@@ -23,6 +23,7 @@ class Collection implements \Countable, \ArrayAccess
 
     public function offsetGet($offset)
     {
+        return isset($this->items[$offset]) ? $this->items[$offset] : null;
     }
 
     public function offsetSet($offset, $value)
