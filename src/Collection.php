@@ -2,6 +2,7 @@
 
 namespace Matthewbdaly\Proper;
 
+use Closure;
 use Countable;
 use ArrayAccess;
 use Iterator;
@@ -86,5 +87,10 @@ class Collection implements Countable, ArrayAccess, Iterator, JsonSerializable, 
     public function toArray()
     {
         return $this->items;
+    }
+
+    public function map(Closure $callback)
+    {
+        return new static(array_map($callback, $this->items));
     }
 }

@@ -180,4 +180,17 @@ class CollectionSpec extends ObjectBehavior
         $this->beConstructedWith($items);
         $this->toArray()->shouldReturn($items);
     }
+
+    function it_implements_map()
+    {
+        $items = [
+            1,
+            2,
+            3
+        ];
+        $this->beConstructedWith($items);
+        $this->map(function ($item) {
+            return ($item * $item * $item);
+        })->toArray()->shouldReturn([1,8,27]);
+    }
 }
