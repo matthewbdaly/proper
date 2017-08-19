@@ -259,4 +259,13 @@ class CollectionSpec extends ObjectBehavior
         $this->beConstructedWith($items);
         $this->pluck('foo')->toArray()->shouldReturn([1, 3, 5]);
     }
+
+    function it_implements_each(\DateTime $date)
+    {
+        $this->beConstructedWith([$date]);
+        $this->each(function ($item) {
+            $item->setTimezone('Europe/London');
+        });
+        $date->setTimezone('Europe/London')->shouldHaveBeenCalled();
+    }
 }

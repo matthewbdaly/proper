@@ -126,4 +126,11 @@ class Collection implements Countable, ArrayAccess, Iterator, JsonSerializable, 
             return $item[$name];
         });
     }
+
+    public function each(Closure $callback)
+    {
+        foreach ($this->items as $item) {
+            $callback($item);
+        }
+    }
 }

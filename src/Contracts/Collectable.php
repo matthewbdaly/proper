@@ -21,4 +21,6 @@ interface Collectable
     public function reduce(Closure $callback, $initial = 0);
 
     public function pluck($name);
+
+    public function each(Closure $callback);
 }
