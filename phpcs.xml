@@ -3,7 +3,6 @@
  <description>The coding standard for the Proper library.</description>
 
  <file>src</file>
- <file>spec</file>
 
  <arg value="np"/>
 
