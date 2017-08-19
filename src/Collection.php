@@ -119,4 +119,11 @@ class Collection implements Countable, ArrayAccess, Iterator, JsonSerializable, 
         }
         return $accumulator;
     }
+
+    public function pluck($name)
+    {
+        return $this->map(function ($item) use ($name) {
+            return $item[$name];
+        });
+    }
 }

@@ -19,4 +19,6 @@ interface Collectable
     public function reject(Closure $callback);
 
     public function reduce(Closure $callback, $initial = 0);
+
+    public function pluck($name);
 }

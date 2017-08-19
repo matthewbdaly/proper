@@ -243,4 +243,20 @@ class CollectionSpec extends ObjectBehavior
             return $total += $item;
         })->shouldReturn(6);
     }
+
+    function it_implements_pluck()
+    {
+        $items = [[
+            'foo' => 1,
+            'bar' => 2
+        ], [
+            'foo' => 3,
+            'bar' => 4
+        ], [
+            'foo' => 5,
+            'bar' => 6
+        ]];
+        $this->beConstructedWith($items);
+        $this->pluck('foo')->toArray()->shouldReturn([1, 3, 5]);
+    }
 }
