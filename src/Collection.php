@@ -20,6 +20,11 @@ class Collection implements Countable, ArrayAccess, Iterator, JsonSerializable, 
         $this->items = $items;
     }
 
+    public static function make(array $items)
+    {
+        return new static($items);
+    }
+
     public function count()
     {
         return count($this->items);

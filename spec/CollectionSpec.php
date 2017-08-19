@@ -19,6 +19,15 @@ class CollectionSpec extends ObjectBehavior
         $this->shouldHaveType(Collection::class);
     }
 
+    function it_can_be_called_statically()
+    {
+        $items = [
+            'foo' => 'bar'
+        ];
+        $this->beConstructedThrough('make', [$items]);
+        $this->count()->shouldReturn(1);
+    }
+
     function it_implements_countable()
     {
         $this->shouldImplement('Countable');

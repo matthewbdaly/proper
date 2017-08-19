@@ -6,6 +6,8 @@ use Closure;
 
 interface Collectable
 {
+    public static function make(array $items);
+
     public function toJson();
 
     public function toArray();
