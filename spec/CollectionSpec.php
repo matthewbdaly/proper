@@ -160,4 +160,24 @@ class CollectionSpec extends ObjectBehavior
     {
         $this->shouldImplement('Matthewbdaly\Proper\Contracts\Collectable');
     }
+
+    function it_can_convert_to_json()
+    {
+        $items = [
+            'foo',
+            'bar'
+        ];
+        $this->beConstructedWith($items);
+        $this->toJson()->shouldReturn(json_encode($items));
+    }
+
+    function it_can_convert_to_array()
+    {
+        $items = [
+            'foo',
+            'bar'
+        ];
+        $this->beConstructedWith($items);
+        $this->toArray()->shouldReturn($items);
+    }
 }

@@ -77,4 +77,14 @@ class Collection implements Countable, ArrayAccess, Iterator, JsonSerializable, 
     {
         return json_encode($this->items);
     }
+
+    public function toJson()
+    {
+        return $this->jsonSerialize();
+    }
+
+    public function toArray()
+    {
+        return $this->items;
+    }
 }
