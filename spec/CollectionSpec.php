@@ -283,4 +283,19 @@ class CollectionSpec extends ObjectBehavior
         $this->pop()->shouldReturn(3);
         $this->toArray()->shouldReturn([1, 2]);
     }
+
+    function it_implements_unshift()
+    {
+        $items = [1, 2, 3];
+        $this->beConstructedWith($items);
+        $this->unshift(4)->toArray()->shouldReturn([4, 1, 2, 3]);
+    }
+
+    function it_implements_shift()
+    {
+        $items = [1, 2, 3];
+        $this->beConstructedWith($items);
+        $this->shift()->shouldReturn(1);
+        $this->toArray()->shouldReturn([2, 3]);
+    }
 }

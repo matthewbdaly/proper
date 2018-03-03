@@ -27,4 +27,8 @@ interface Collectable
     public function push($item);
 
     public function pop();
+
+    public function unshift($item);
+
+    public function shift();
 }

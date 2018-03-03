@@ -137,11 +137,22 @@ class Collection implements Countable, ArrayAccess, Iterator, JsonSerializable, 
     public function push($item)
     {
         array_push($this->items, $item);
-        return new static($this->items, $item);
+        return new static($this->items);
     }
 
     public function pop()
     {
         return array_pop($this->items);
+    }
+
+    public function unshift($item)
+    {
+        array_unshift($this->items, $item);
+        return new static($this->items);
+    }
+
+    public function shift()
+    {
+        return array_shift($this->items);
     }
 }
