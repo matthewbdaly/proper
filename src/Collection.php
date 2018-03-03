@@ -50,21 +50,45 @@ class Collection implements Countable, ArrayAccess, Iterator, JsonSerializable, 
         return new static($items);
     }
 
+    /**
+     * Return count of items
+     *
+     * @return integer
+     */
     public function count()
     {
         return count($this->items);
     }
 
+    /**
+     * Does item exist?
+     *
+     * @param mixed $offset The offset.
+     * @return boolean
+     */
     public function offsetExists($offset)
     {
         return isset($this->items[$offset]);
     }
 
+    /**
+     * Get offset
+     *
+     * @param mixed $offset The offset.
+     * @return mixed
+     */
     public function offsetGet($offset)
     {
         return isset($this->items[$offset]) ? $this->items[$offset] : null;
     }
 
+    /**
+     * Set offset
+     *
+     * @param mixed $offset The offset.
+     * @param mixed $value  The value to set.
+     * @return void
+     */
     public function offsetSet($offset, $value)
     {
         if (is_null($offset)) {
@@ -74,36 +98,72 @@ class Collection implements Countable, ArrayAccess, Iterator, JsonSerializable, 
         }
     }
 
+    /**
+     * Unset offset
+     *
+     * @param mixed $offset The offset.
+     * @return void
+     */
     public function offsetUnset($offset)
     {
         unset($this->items[$offset]);
     }
 
+    /**
+     * Get current item
+     *
+     * @return mixed
+     */
     public function current()
     {
         return $this->items[$this->position];
     }
 
+    /**
+     * Get key for current item
+     *
+     * @return mixed
+     */
     public function key()
     {
         return $this->position;
     }
 
+    /**
+     * Move counter to next item
+     *
+     * @return void
+     */
     public function next()
     {
         ++$this->position;
     }
 
+    /**
+     * Move counter back to zero
+     *
+     * @return void
+     */
     public function rewind()
     {
         $this->position = 0;
     }
 
+    /**
+     * Is current item valid?
+     *
+     * @return boolean
+     */
     public function valid()
     {
         return isset($this->items[$this->position]);
     }
 
+    /**
+     * Serialize collection to JSON
+     *
+     * @return string
+     */
     public function jsonSerialize()
     {
         return json_encode($this->items);
