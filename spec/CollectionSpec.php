@@ -275,4 +275,12 @@ class CollectionSpec extends ObjectBehavior
         $this->beConstructedWith($items);
         $this->push(4)->toArray()->shouldReturn([1, 2, 3, 4]);
     }
+
+    function it_implements_pop()
+    {
+        $items = [1, 2, 3];
+        $this->beConstructedWith($items);
+        $this->pop()->shouldReturn(3);
+        $this->toArray()->shouldReturn([1, 2]);
+    }
 }

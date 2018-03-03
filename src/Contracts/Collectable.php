@@ -25,4 +25,6 @@ interface Collectable
     public function each(Closure $callback);
 
     public function push($item);
+
+    public function pop();
 }

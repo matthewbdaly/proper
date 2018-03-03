@@ -139,4 +139,9 @@ class Collection implements Countable, ArrayAccess, Iterator, JsonSerializable, 
         array_push($this->items, $item);
         return new static($this->items, $item);
     }
+
+    public function pop()
+    {
+        return array_pop($this->items);
+    }
 }
