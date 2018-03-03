@@ -9,6 +9,9 @@ use Iterator;
 use JsonSerializable;
 use Matthewbdaly\Proper\Contracts\Collectable;
 
+/**
+ * Collection class
+ */
 class Collection implements Countable, ArrayAccess, Iterator, JsonSerializable, Collectable
 {
     protected $items;
