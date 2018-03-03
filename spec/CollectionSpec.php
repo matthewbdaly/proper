@@ -268,4 +268,11 @@ class CollectionSpec extends ObjectBehavior
         });
         $date->setTimezone('Europe/London')->shouldHaveBeenCalled();
     }
+
+    function it_implements_push()
+    {
+        $items = [1, 2, 3];
+        $this->beConstructedWith($items);
+        $this->push(4)->toArray()->shouldReturn([1, 2, 3, 4]);
+    }
 }

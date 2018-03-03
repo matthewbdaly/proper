@@ -133,4 +133,10 @@ class Collection implements Countable, ArrayAccess, Iterator, JsonSerializable, 
             $callback($item);
         }
     }
+
+    public function push($item)
+    {
+        array_push($this->items, $item);
+        return new static($this->items, $item);
+    }
 }

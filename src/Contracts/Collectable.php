@@ -23,4 +23,6 @@ interface Collectable
     public function pluck($name);
 
     public function each(Closure $callback);
+
+    public function push($item);
 }
