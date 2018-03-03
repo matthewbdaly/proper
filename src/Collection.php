@@ -17,14 +17,14 @@ class Collection implements Countable, ArrayAccess, Iterator, JsonSerializable, 
     /**
      * Items
      *
-     * @var $items
+     * @var array
      */
     protected $items;
 
     /**
      * Position
      *
-     * @var $position
+     * @var integer
      */
     protected $position = 0;
 

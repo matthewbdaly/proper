@@ -10,7 +10,7 @@ interface Collectable
      * Create collection
      *
      * @param array $items Items to collect.
-     * @return Collection
+     * @return Collectable
      */
     public static function make(array $items);
 

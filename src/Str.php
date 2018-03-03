@@ -14,14 +14,14 @@ class Str implements Countable, ArrayAccess, Iterator
     /**
      * String
      *
-     * @var $string
+     * @var string
      */
     protected $string;
 
     /**
      * Position
      *
-     * @var $position
+     * @var integer
      */
     protected $position = 0;
 
