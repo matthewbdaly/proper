@@ -75,6 +75,7 @@ class CollectionSpec extends ObjectBehavior
         ];
         $this->beConstructedWith($items);
         $this->offsetSet(0, 'baz');
+        $this->toArray()->shouldReturn(['baz', 'bar']);
         $this->offsetGet(0)->shouldReturn('baz');
     }
 
@@ -86,6 +87,7 @@ class CollectionSpec extends ObjectBehavior
         ];
         $this->beConstructedWith($items);
         $this->offsetUnset(1);
+        $this->toArray()->shouldReturn(['foo']);
         $this->offsetGet(1)->shouldReturn(null);
         $this->count()->shouldReturn(1);
     }
