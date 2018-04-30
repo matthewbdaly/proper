@@ -309,4 +309,25 @@ class Collection implements Countable, ArrayAccess, Iterator, JsonSerializable, 
     {
         return array_shift($this->items);
     }
+
+    /**
+     * Sort collection
+     *
+     * @return Collection
+     */
+    public function sort()
+    {
+        sort($this->items);
+        return new static($this->items);
+    }
+
+    /**
+     * Reverse collection
+     * 
+     * @return Collection
+     */
+    public function reverse()
+    {
+        return new static(array_reverse($this->items));
+    }
 }

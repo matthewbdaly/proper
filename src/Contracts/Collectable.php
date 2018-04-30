@@ -106,4 +106,18 @@ interface Collectable
      * @return mixed
      */
     public function shift();
+
+    /**
+     * Sort collection
+     *
+     * @return Collectable
+     */
+    public function sort();
+
+    /**
+     * Reverse collection
+     * 
+     * @return Collectable
+     */
+    public function reverse();
 }

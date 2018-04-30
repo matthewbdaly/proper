@@ -300,4 +300,18 @@ class CollectionSpec extends ObjectBehavior
         $this->shift()->shouldReturn(1);
         $this->toArray()->shouldReturn([2, 3]);
     }
+
+    function it_implements_sort()
+    {
+        $items = [2, 1, 3];
+        $this->beConstructedWith($items);
+        $this->sort()->toArray()->shouldReturn([1, 2, 3]);
+    }
+
+    function it_implements_reverse()
+    {
+        $items = [3, 2, 1];
+        $this->beConstructedWith($items);
+        $this->reverse()->toArray()->shouldReturn([1, 2, 3]);
+    }
 }
