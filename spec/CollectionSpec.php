@@ -305,6 +305,15 @@ class CollectionSpec extends ObjectBehavior
     {
         $items = [2, 1, 3];
         $this->beConstructedWith($items);
+        $this->sort(function ($a, $b) {
+            return ($a > $b) ? -1 : 1;
+        })->toArray()->shouldReturn([3, 2, 1]);
+    }
+
+    function it_allows_a_callback_to_sort()
+    {
+        $items = [2, 1, 3];
+        $this->beConstructedWith($items);
         $this->sort()->toArray()->shouldReturn([1, 2, 3]);
     }
 

@@ -313,11 +313,16 @@ class Collection implements Countable, ArrayAccess, Iterator, JsonSerializable, 
     /**
      * Sort collection
      *
+     * @param Closure|null $callback The callback to use.
      * @return Collection
      */
-    public function sort()
+    public function sort(Closure $callback = null)
     {
-        sort($this->items);
+        if ($callback) {
+            usort($this->items, $callback);
+        } else {
+            sort($this->items);
+        }
         return new static($this->items);
     }
 

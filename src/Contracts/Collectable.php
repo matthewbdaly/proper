@@ -110,9 +110,10 @@ interface Collectable
     /**
      * Sort collection
      *
+     * @param Closure|null $callback The callback to use.
      * @return Collectable
      */
-    public function sort();
+    public function sort(Closure $callback = null);
 
     /**
      * Reverse collection
