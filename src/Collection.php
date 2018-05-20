@@ -330,4 +330,24 @@ class Collection implements Countable, ArrayAccess, Iterator, JsonSerializable, 
     {
         return new static(array_reverse($this->items));
     }
+
+    /**
+     * Return keys
+     *
+     * @return Collection
+     */
+    public function keys()
+    {
+        return new static(array_keys($this->items));
+    }
+
+    /**
+     * Return values
+     *
+     * @return Collection
+     */
+    public function values()
+    {
+        return new static(array_values($this->items));
+    }
 }

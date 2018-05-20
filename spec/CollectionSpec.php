@@ -314,4 +314,26 @@ class CollectionSpec extends ObjectBehavior
         $this->beConstructedWith($items);
         $this->reverse()->toArray()->shouldReturn([1, 2, 3]);
     }
+
+    function it_implements_keys()
+    {
+        $items = [
+            1 => "a",
+            2 => "b",
+            3 => "c"
+        ];
+        $this->beConstructedWith($items);
+        $this->keys()->toArray()->shouldReturn([1, 2, 3]);
+    }
+
+    function it_implements_values()
+    {
+        $items = [
+            1 => "a",
+            2 => "b",
+            3 => "c"
+        ];
+        $this->beConstructedWith($items);
+        $this->values()->toArray()->shouldReturn(["a", "b", "c"]);
+    }
 }

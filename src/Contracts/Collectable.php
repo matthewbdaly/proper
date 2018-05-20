@@ -120,4 +120,18 @@ interface Collectable
      * @return Collectable
      */
     public function reverse();
+
+    /**
+     * Return keys
+     * 
+     * @return Collectable
+     */
+    public function keys();
+
+    /**
+     * Return values
+     * 
+     * @return Collectable
+     */
+    public function values();
 }
