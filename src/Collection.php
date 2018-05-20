@@ -355,4 +355,15 @@ class Collection implements Countable, ArrayAccess, Iterator, JsonSerializable, 
     {
         return new static(array_values($this->items));
     }
+
+    /**
+     * Return chunked collection
+     *
+     * @param integer $size Chunk size.
+     * @return Collectable
+     */
+    public function chunk(int $size)
+    {
+        return new static(array_chunk($this->items, $size));
+    }
 }

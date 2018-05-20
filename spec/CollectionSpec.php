@@ -345,4 +345,25 @@ class CollectionSpec extends ObjectBehavior
         $this->beConstructedWith($items);
         $this->values()->toArray()->shouldReturn(["a", "b", "c"]);
     }
+
+    function it_implements_chunk()
+    {
+        $items = [
+            "a",
+            "b",
+            "c",
+            "d",
+            "e"
+        ];
+        $this->beConstructedWith($items);
+        $this->chunk(2)->toArray()->shouldReturn([[
+            "a",
+            "b",
+        ], [
+            "c",
+            "d",
+        ], [
+            "e"
+        ]]);
+    }
 }

@@ -135,4 +135,12 @@ interface Collectable
      * @return Collectable
      */
     public function values();
+
+    /**
+     * Return chunked collection
+     *
+     * @param integer $size Chunk size.
+     * @return Collectable
+     */
+    public function chunk(int $size);
 }
