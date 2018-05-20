@@ -323,7 +323,7 @@ class Collection implements Countable, ArrayAccess, Iterator, JsonSerializable, 
 
     /**
      * Reverse collection
-     * 
+     *
      * @return Collection
      */
     public function reverse()
