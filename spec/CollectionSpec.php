@@ -366,4 +366,29 @@ class CollectionSpec extends ObjectBehavior
             "e"
         ]]);
     }
+
+    function it_implements_merge()
+    {
+        $items = [
+            "a",
+            "b",
+            "c",
+            "d",
+            "e"
+        ];
+        $merged = [
+            "f",
+            "g"
+        ];
+        $this->beConstructedWith($items);
+        $this->merge($merged)->toArray()->shouldReturn([
+            "a",
+            "b",
+            "c",
+            "d",
+            "e",
+            "f",
+            "g"
+        ]);
+    }
 }

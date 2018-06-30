@@ -366,4 +366,9 @@ class Collection implements Countable, ArrayAccess, Iterator, JsonSerializable, 
     {
         return new static(array_chunk($this->items, $size));
     }
+
+    public function merge($merge)
+    {
+        return new static(array_merge($this->items, $merge));
+    }
 }
