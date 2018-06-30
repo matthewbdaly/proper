@@ -143,4 +143,12 @@ interface Collectable
      * @return Collectable
      */
     public function chunk(int $size);
+
+    /**
+     * Merge another array into the collection
+     * 
+     * @param mixed $merge Array to merge.
+     * @return Collectable
+     */
+    public function merge($merge);
 }
