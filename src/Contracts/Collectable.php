@@ -146,7 +146,7 @@ interface Collectable
 
     /**
      * Merge another array into the collection
-     * 
+     *
      * @param mixed $merge Array to merge.
      * @return Collectable
      */
