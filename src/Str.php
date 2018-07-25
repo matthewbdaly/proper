@@ -165,4 +165,14 @@ class Str implements Countable, ArrayAccess, Iterator
     {
         return new static(str_replace($find, $replace, $this->string));
     }
+
+    public function toUpper()
+    {
+        return new static(strtoupper($this->string));
+    }
+
+    public function toLower()
+    {
+        return new static(strtolower($this->string));
+    }
 }

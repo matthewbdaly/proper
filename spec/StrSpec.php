@@ -113,4 +113,14 @@ class StrSpec extends ObjectBehavior
     {
         $this->replace('modern major general', 'scientist Salarian')->__toString()->shouldReturn('I am the very model of a scientist Salarian');
     }
+
+    function it_can_convert_to_upper()
+    {
+        $this->toUpper()->__toString()->shouldReturn('I AM THE VERY MODEL OF A MODERN MAJOR GENERAL');
+    }
+
+    function it_can_convert_to_lower()
+    {
+        $this->toLower()->__toString()->shouldReturn('i am the very model of a modern major general');
+    }
 }
