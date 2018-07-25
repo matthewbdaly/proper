@@ -160,4 +160,9 @@ class Str implements Countable, ArrayAccess, Iterator
     {
         return $this->string;
     }
+
+    public function replace($find, $replace)
+    {
+        return new static(str_replace($find, $replace, $this->string));
+    }
 }

@@ -108,4 +108,9 @@ class StrSpec extends ObjectBehavior
     {
         $this->__toString()->shouldReturn('I am the very model of a modern major general');
     }
+
+    function it_can_replace()
+    {
+        $this->replace('modern major general', 'scientist Salarian')->__toString()->shouldReturn('I am the very model of a scientist Salarian');
+    }
 }
