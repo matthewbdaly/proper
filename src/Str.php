@@ -155,4 +155,9 @@ class Str implements Countable, ArrayAccess, Iterator
     {
         return isset($this->string[$this->position]);
     }
+
+    public function __toString()
+    {
+        return $this->string;
+    }
 }

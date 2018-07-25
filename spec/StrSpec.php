@@ -103,4 +103,9 @@ class StrSpec extends ObjectBehavior
     {
         $this->valid()->shouldReturn(true);
     }
+
+    function it_renders_to_string()
+    {
+        $this->__toString()->shouldReturn('I am the very model of a modern major general');
+    }
 }
