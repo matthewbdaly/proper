@@ -175,4 +175,19 @@ class Str implements Countable, ArrayAccess, Iterator
     {
         return new static(strtolower($this->string));
     }
+
+    public function trim()
+    {
+        return new static(trim($this->string));
+    }
+
+    public function ltrim()
+    {
+        return new static(ltrim($this->string));
+    }
+
+    public function rtrim()
+    {
+        return new static(rtrim($this->string));
+    }
 }

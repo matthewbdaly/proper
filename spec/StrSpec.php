@@ -123,4 +123,25 @@ class StrSpec extends ObjectBehavior
     {
         $this->toLower()->__toString()->shouldReturn('i am the very model of a modern major general');
     }
+
+    function it_can_trim()
+    {
+        $str = '  I am the very model of a modern major general  ';
+        $this->beConstructedWith($str);
+        $this->trim()->__toString()->shouldReturn('I am the very model of a modern major general');
+    }
+
+    function it_can_ltrim()
+    {
+        $str = '  I am the very model of a modern major general  ';
+        $this->beConstructedWith($str);
+        $this->ltrim()->__toString()->shouldReturn('I am the very model of a modern major general  ');
+    }
+
+    function it_can_rtrim()
+    {
+        $str = '  I am the very model of a modern major general  ';
+        $this->beConstructedWith($str);
+        $this->rtrim()->__toString()->shouldReturn('  I am the very model of a modern major general');
+    }
 }
