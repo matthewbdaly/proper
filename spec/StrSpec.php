@@ -57,6 +57,13 @@ class StrSpec extends ObjectBehavior
         $this->offsetGet(0)->shouldReturn('A');
     }
 
+    function it_appends_element_when_offset_set_passed_null()
+    {
+        $this->offsetSet(null, 'B');
+        $this->offsetGet(0)->shouldReturn('I');
+        $this->offsetGet(45)->shouldReturn('B');
+    }
+
     function it_can_unset_offset()
     {
         $this->offsetUnset(1);

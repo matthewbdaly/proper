@@ -79,6 +79,20 @@ class CollectionSpec extends ObjectBehavior
         $this->offsetGet(0)->shouldReturn('baz');
     }
 
+    function it_appends_element_when_offset_set_passed_null()
+    {
+        $items = [
+            'foo',
+            'bar'
+        ];
+        $this->beConstructedWith($items);
+        $this->offsetSet(null, 'baz');
+        $this->toArray()->shouldReturn(['foo', 'bar', 'baz']);
+        $this->offsetGet(0)->shouldReturn('foo');
+        $this->offsetGet(1)->shouldReturn('bar');
+        $this->offsetGet(2)->shouldReturn('baz');
+    }
+
     function it_can_unset_offset()
     {
         $items = [

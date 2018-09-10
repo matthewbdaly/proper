@@ -89,7 +89,7 @@ class Str implements Countable, ArrayAccess, Iterator
     public function offsetSet($offset, $value)
     {
         if (is_null($offset)) {
-            $this->string[] = $value;
+            $this->string .= $value;
         } else {
             $this->string[$offset] = $value;
         }
