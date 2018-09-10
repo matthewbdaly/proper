@@ -2,3 +2,4 @@ vendor/
 *.swp
 composer.lock
 coverage/
+infection-log.txt
