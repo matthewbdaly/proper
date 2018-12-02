@@ -162,7 +162,7 @@ class Collection implements Countable, ArrayAccess, Iterator, JsonSerializable, 
     /**
      * Serialize collection to JSON
      *
-     * @return string
+     * @return string|false
      */
     public function jsonSerialize()
     {
@@ -172,7 +172,7 @@ class Collection implements Countable, ArrayAccess, Iterator, JsonSerializable, 
     /**
      * Convert collection to JSON
      *
-     * @return string
+     * @return string|false
      */
     public function toJson()
     {

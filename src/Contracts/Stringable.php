@@ -10,7 +10,7 @@ interface Stringable
      * Create string
      *
      * @param string $string String to use.
-     * @return Str
+     * @return Stringable
      */
     public static function make(string $string): Stringable;
 
