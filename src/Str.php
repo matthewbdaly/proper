@@ -157,36 +157,73 @@ class Str implements Countable, ArrayAccess, Iterator, Stringable
         return isset($this->string[$this->position]);
     }
 
+    /**
+     * Convert to string
+     *
+     * @return string
+     */
     public function __toString()
     {
         return $this->string;
     }
 
-    public function replace($find, $replace)
+    /**
+     * Find and replace text
+     *
+     * @param string $find    Text to find.
+     * @param string $replace Text to replace.
+     * @return Stringable
+     */
+    public function replace(string $find, string $replace)
     {
         return new static(str_replace($find, $replace, $this->string));
     }
 
+    /**
+     * Convert to upper case
+     *
+     * @return Stringable
+     */
     public function toUpper()
     {
         return new static(strtoupper($this->string));
     }
 
+    /**
+     * Convert to lower case
+     *
+     * @return Stringable
+     */
     public function toLower()
     {
         return new static(strtolower($this->string));
     }
 
+    /**
+     * Trim whitespace
+     *
+     * @return Stringable
+     */
     public function trim()
     {
         return new static(trim($this->string));
     }
 
+    /**
+     * Trim left whitespace
+     *
+     * @return Stringable
+     */
     public function ltrim()
     {
         return new static(ltrim($this->string));
     }
 
+    /**
+     * Trim right whitespace
+     *
+     * @return Stringable
+     */
     public function rtrim()
     {
         return new static(rtrim($this->string));
