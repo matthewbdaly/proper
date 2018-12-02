@@ -5,11 +5,12 @@ namespace Matthewbdaly\Proper;
 use Countable;
 use ArrayAccess;
 use Iterator;
+use Matthewbdaly\Proper\Contracts\Stringable;
 
 /**
  * String class
  */
-class Str implements Countable, ArrayAccess, Iterator
+class Str implements Countable, ArrayAccess, Iterator, Stringable
 {
     /**
      * String
