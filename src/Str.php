@@ -43,7 +43,7 @@ class Str implements Countable, ArrayAccess, Iterator, Stringable
      * @param string $string String to use.
      * @return Str
      */
-    public static function make(string $string)
+    public static function make(string $string): Stringable
     {
         return new static($string);
     }
@@ -53,7 +53,7 @@ class Str implements Countable, ArrayAccess, Iterator, Stringable
      *
      * @return integer
      */
-    public function count()
+    public function count(): int
     {
         return strlen($this->string);
     }
@@ -64,7 +64,7 @@ class Str implements Countable, ArrayAccess, Iterator, Stringable
      * @param mixed $offset The offset.
      * @return boolean
      */
-    public function offsetExists($offset)
+    public function offsetExists($offset): bool
     {
         return isset($this->string[$offset]);
     }
@@ -152,7 +152,7 @@ class Str implements Countable, ArrayAccess, Iterator, Stringable
      *
      * @return boolean
      */
-    public function valid()
+    public function valid(): bool
     {
         return isset($this->string[$this->position]);
     }
@@ -162,7 +162,7 @@ class Str implements Countable, ArrayAccess, Iterator, Stringable
      *
      * @return string
      */
-    public function __toString()
+    public function __toString(): string
     {
         return $this->string;
     }
@@ -174,7 +174,7 @@ class Str implements Countable, ArrayAccess, Iterator, Stringable
      * @param string $replace Text to replace.
      * @return Stringable
      */
-    public function replace(string $find, string $replace)
+    public function replace(string $find, string $replace): Stringable
     {
         return new static(str_replace($find, $replace, $this->string));
     }
@@ -184,7 +184,7 @@ class Str implements Countable, ArrayAccess, Iterator, Stringable
      *
      * @return Stringable
      */
-    public function toUpper()
+    public function toUpper(): Stringable
     {
         return new static(strtoupper($this->string));
     }
@@ -194,7 +194,7 @@ class Str implements Countable, ArrayAccess, Iterator, Stringable
      *
      * @return Stringable
      */
-    public function toLower()
+    public function toLower(): Stringable
     {
         return new static(strtolower($this->string));
     }
@@ -204,7 +204,7 @@ class Str implements Countable, ArrayAccess, Iterator, Stringable
      *
      * @return Stringable
      */
-    public function trim()
+    public function trim(): Stringable
     {
         return new static(trim($this->string));
     }
@@ -214,7 +214,7 @@ class Str implements Countable, ArrayAccess, Iterator, Stringable
      *
      * @return Stringable
      */
-    public function ltrim()
+    public function ltrim(): Stringable
     {
         return new static(ltrim($this->string));
     }
@@ -224,7 +224,7 @@ class Str implements Countable, ArrayAccess, Iterator, Stringable
      *
      * @return Stringable
      */
-    public function rtrim()
+    public function rtrim(): Stringable
     {
         return new static(rtrim($this->string));
     }
