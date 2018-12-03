@@ -167,7 +167,7 @@ trait IsCollection
      * Map operation
      *
      * @param Closure $callback The callback to use.
-     * @return Collection
+     * @return Collectable
      */
     public function map(Closure $callback)
     {
@@ -178,7 +178,7 @@ trait IsCollection
      * Filter operation
      *
      * @param Closure $callback The callback to use.
-     * @return Collection
+     * @return Collectable
      */
     public function filter(Closure $callback)
     {
@@ -189,7 +189,7 @@ trait IsCollection
      * Reverse filter operation
      *
      * @param Closure $callback The callback to use.
-     * @return Collection
+     * @return Collectable
      */
     public function reject(Closure $callback)
     {
@@ -244,7 +244,7 @@ trait IsCollection
      * Push item to end of collection
      *
      * @param mixed $item Item to push.
-     * @return Collection
+     * @return Collectable
      */
     public function push($item)
     {
@@ -266,7 +266,7 @@ trait IsCollection
      * Push item to start of collection
      *
      * @param mixed $item Item to push.
-     * @return Collection
+     * @return Collectable
      */
     public function unshift($item)
     {
@@ -288,7 +288,7 @@ trait IsCollection
      * Sort collection
      *
      * @param Closure|null $callback The callback to use.
-     * @return Collection
+     * @return Collectable
      */
     public function sort(Closure $callback = null)
     {
@@ -303,7 +303,7 @@ trait IsCollection
     /**
      * Reverse collection
      *
-     * @return Collection
+     * @return Collectable
      */
     public function reverse()
     {
@@ -313,7 +313,7 @@ trait IsCollection
     /**
      * Return keys
      *
-     * @return Collection
+     * @return Collectable
      */
     public function keys()
     {
@@ -323,7 +323,7 @@ trait IsCollection
     /**
      * Return values
      *
-     * @return Collection
+     * @return Collectable
      */
     public function values()
     {
