@@ -5,7 +5,7 @@ namespace Matthewbdaly\Proper;
 use Closure;
 use Countable;
 use ArrayAccess;
-use Iterator;
+use SeekableIterator;
 use JsonSerializable;
 use Matthewbdaly\Proper\Contracts\Collectable;
 use Matthewbdaly\Proper\Traits\IsCollection;
@@ -13,7 +13,7 @@ use Matthewbdaly\Proper\Traits\IsCollection;
 /**
  * Collection class
  */
-class Collection implements Countable, ArrayAccess, Iterator, JsonSerializable, Collectable
+class Collection implements Countable, ArrayAccess, SeekableIterator, JsonSerializable, Collectable
 {
     use IsCollection;
 

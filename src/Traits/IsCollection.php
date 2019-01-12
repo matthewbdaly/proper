@@ -4,6 +4,7 @@ namespace Matthewbdaly\Proper\Traits;
 
 use Closure;
 use Matthewbdaly\Proper\Contracts\Collectable;
+use OutOfBoundsException;
 
 /**
  * Collection trait
@@ -350,5 +351,20 @@ trait IsCollection
     public function merge($merge)
     {
         return new static(array_merge($this->items, $merge));
+    }
+
+    /**
+     * Seek a position
+     *
+     * @param mixed $position Position to seek.
+     * @return void
+     * @throws OutOfBoundsException Invalid position.
+     */
+    public function seek($position)
+    {
+        if (!isset($this->items[$position])) {
+            throw new OutOfBoundsException("invalid seek position ($position)");
+        }
+        $this->position = $position;
     }
 }

@@ -4,14 +4,14 @@ namespace Matthewbdaly\Proper;
 
 use Countable;
 use ArrayAccess;
-use Iterator;
+use SeekableIterator;
 use Matthewbdaly\Proper\Contracts\Stringable;
 use Matthewbdaly\Proper\Traits\IsString;
 
 /**
  * String class
  */
-class Str implements Countable, ArrayAccess, Iterator, Stringable
+class Str implements Countable, ArrayAccess, SeekableIterator, Stringable
 {
     use IsString;
 

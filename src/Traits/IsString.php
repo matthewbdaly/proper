@@ -3,6 +3,7 @@
 namespace Matthewbdaly\Proper\Traits;
 
 use Matthewbdaly\Proper\Contracts\Stringable;
+use OutOfBoundsException;
 
 /**
  * String trait
@@ -202,5 +203,20 @@ trait IsString
     public function rtrim(): Stringable
     {
         return new static(rtrim($this->string));
+    }
+
+    /**
+     * Seek a position
+     *
+     * @param mixed $position Position to seek.
+     * @return void
+     * @throws OutOfBoundsException Invalid position.
+     */
+    public function seek($position)
+    {
+        if (!isset($this->string[$position])) {
+            throw new OutOfBoundsException("invalid seek position ($position)");
+        }
+        $this->position = $position;
     }
 }
