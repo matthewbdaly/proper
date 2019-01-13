@@ -194,7 +194,7 @@ trait IsCollection
      */
     public function reject(Closure $callback)
     {
-        return $this->filter(function($item) use ($callback) {
+        return $this->filter(function ($item) use ($callback) {
             return ! $callback($item);
         });
     }
@@ -223,7 +223,7 @@ trait IsCollection
      */
     public function pluck($name)
     {
-        return $this->map(function($item) use ($name) {
+        return $this->map(function ($item) use ($name) {
             return $item[$name];
         });
     }
@@ -362,7 +362,7 @@ trait IsCollection
      */
     public function seek($position)
     {
-        if ( ! isset($this->items[$position])) {
+        if (! isset($this->items[$position])) {
             throw new OutOfBoundsException("invalid seek position ($position)");
         }
         $this->position = $position;
