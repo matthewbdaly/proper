@@ -151,4 +151,11 @@ class StrSpec extends ObjectBehavior
         $this->beConstructedWith($str);
         $this->rtrim()->__toString()->shouldReturn('  I am the very model of a modern major general');
     }
+
+    function it_implements_seek()
+    {
+        $str = 'I am the very model of a modern major general  ';
+        $this->beConstructedWith($str);
+        $this->seek(2)->current()->shouldReturn("a");
+    }
 }

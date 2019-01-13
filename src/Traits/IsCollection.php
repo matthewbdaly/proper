@@ -357,7 +357,7 @@ trait IsCollection
      * Seek a position
      *
      * @param mixed $position Position to seek.
-     * @return void
+     * @return Collectable
      * @throws OutOfBoundsException Invalid position.
      */
     public function seek($position)
@@ -366,5 +366,6 @@ trait IsCollection
             throw new OutOfBoundsException("invalid seek position ($position)");
         }
         $this->position = $position;
+        return $this;
     }
 }

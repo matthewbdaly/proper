@@ -405,4 +405,17 @@ class CollectionSpec extends ObjectBehavior
             "g"
         ]);
     }
+
+    function it_implements_seek()
+    {
+        $items = [
+            "a",
+            "b",
+            "c",
+            "d",
+            "e"
+        ];
+        $this->beConstructedWith($items);
+        $this->seek(2)->current()->shouldReturn("c");
+    }
 }

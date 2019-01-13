@@ -209,7 +209,7 @@ trait IsString
      * Seek a position
      *
      * @param mixed $position Position to seek.
-     * @return void
+     * @return Stringable
      * @throws OutOfBoundsException Invalid position.
      */
     public function seek($position)
@@ -218,5 +218,6 @@ trait IsString
             throw new OutOfBoundsException("invalid seek position ($position)");
         }
         $this->position = $position;
+        return $this;
     }
 }
