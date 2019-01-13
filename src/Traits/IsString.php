@@ -1,4 +1,4 @@
-<?php declare(strict_types = 1);
+<?php declare(strict_types=1);
 
 namespace Matthewbdaly\Proper\Traits;
 
@@ -214,7 +214,7 @@ trait IsString
      */
     public function seek($position)
     {
-        if (!isset($this->string[$position])) {
+        if ( ! isset($this->string[$position])) {
             throw new OutOfBoundsException("invalid seek position ($position)");
         }
         $this->position = $position;
