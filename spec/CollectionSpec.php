@@ -418,4 +418,23 @@ class CollectionSpec extends ObjectBehavior
         $this->beConstructedWith($items);
         $this->seek(2)->current()->shouldReturn("c");
     }
+
+    function it_implements_group_by()
+    {
+        $items = [
+                ['account_id' => 'account-x10', 'product' => 'Chair'],
+                    ['account_id' => 'account-x10', 'product' => 'Bookcase'],
+                        ['account_id' => 'account-x11', 'product' => 'Desk'],
+        ];
+        $this->beConstructedWith($items);
+        $this->groupBy('account_id')->toArray()->shouldReturn([
+            'account-x10' => [
+                ['account_id' => 'account-x10', 'product' => 'Chair'],
+                ['account_id' => 'account-x10', 'product' => 'Bookcase'],
+            ],
+            'account-x11' => [
+                ['account_id' => 'account-x11', 'product' => 'Desk'],
+            ],
+        ]);
+    }
 }

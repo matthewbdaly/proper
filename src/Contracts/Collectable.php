@@ -151,4 +151,21 @@ interface Collectable
      * @return Collectable
      */
     public function merge($merge);
+
+    /**
+     * Seek a position
+     *
+     * @param mixed $position Position to seek.
+     * @return Collectable
+     * @throws OutOfBoundsException Invalid position.
+     */
+    public function seek($position);
+
+    /**
+     * Group by a given key
+     *
+     * @param string $key Key to group by.
+     * @return Collectable
+     */
+    public function groupBy(string $key);
 }

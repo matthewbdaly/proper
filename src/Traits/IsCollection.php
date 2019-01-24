@@ -368,4 +368,19 @@ trait IsCollection
         $this->position = $position;
         return $this;
     }
+
+    /**
+     * Group by a given key
+     *
+     * @param string $key Key to group by.
+     * @return Collectable
+     */
+    public function groupBy(string $key)
+    {
+        $items = [];
+        foreach ($this->items as $item) {
+            $items[$item[$key]][] = $item;
+        }
+        return new static($items);
+    }
 }
