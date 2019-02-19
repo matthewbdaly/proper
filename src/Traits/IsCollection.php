@@ -383,4 +383,18 @@ trait IsCollection
         }
         return new static($items);
     }
+
+    /**
+     * Flatten items
+     *
+     * @return Collectable
+     */
+    public function flatten()
+    {
+        $return = array();
+        array_walk_recursive($this->items, function ($a) use (&$return) {
+            $return[] = $a;
+        });
+        return new static($return);
+    }
 }

@@ -437,4 +437,28 @@ class CollectionSpec extends ObjectBehavior
             ],
         ]);
     }
+
+    function it_implements_flatten()
+    {
+        $items = [
+            1,
+            2,
+            3,
+            [4, 5],
+            [6, 7, 8],
+            9
+        ];
+        $this->beConstructedWith($items);
+        $this->flatten()->toArray()->shouldReturn([
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9
+        ]);
+    }
 }

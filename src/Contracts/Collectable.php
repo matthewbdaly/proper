@@ -168,4 +168,11 @@ interface Collectable
      * @return Collectable
      */
     public function groupBy(string $key);
+
+    /**
+     * Flatten items
+     *
+     * @return Collectable
+     */
+    public function flatten();
 }
