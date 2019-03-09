@@ -9,13 +9,14 @@ use SeekableIterator;
 use JsonSerializable;
 use Matthewbdaly\Proper\Contracts\Collectable;
 use Matthewbdaly\Proper\Traits\IsCollection;
+use Matthewbdaly\Proper\Traits\IsMacroable;
 
 /**
  * Collection class
  */
 class Collection implements Countable, ArrayAccess, SeekableIterator, JsonSerializable, Collectable
 {
-    use IsCollection;
+    use IsMacroable, IsCollection;
 
     /**
      * Constructor

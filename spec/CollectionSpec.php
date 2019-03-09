@@ -461,4 +461,21 @@ class CollectionSpec extends ObjectBehavior
             9
         ]);
     }
+
+    function it_supports_macros()
+    {
+        $items = [1,2,3,4];
+        $this->beConstructedWith($items);
+        $this->macro('some', function ($callback) {
+            return !! $this->first(function ($value, $key) use ($callback) {
+                return $callback($value, $key);
+            });
+        });
+        $this->some(function ($value) {
+            return $value > 2;
+        })->shouldReturn(true);
+        $this->some(function ($value) {
+            return $value > 5;
+        })->shouldReturn(false);
+    }
 }
