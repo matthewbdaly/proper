@@ -7,13 +7,14 @@ use ArrayAccess;
 use SeekableIterator;
 use Matthewbdaly\Proper\Contracts\Stringable;
 use Matthewbdaly\Proper\Traits\IsString;
+use Matthewbdaly\Proper\Traits\IsMacroable;
 
 /**
  * String class
  */
 class Str implements Countable, ArrayAccess, SeekableIterator, Stringable
 {
-    use IsString;
+    use IsMacroable, IsString;
 
     /**
      * String
