@@ -464,18 +464,13 @@ class CollectionSpec extends ObjectBehavior
 
     function it_supports_macros()
     {
-        $items = [1,2,3,4];
+        $items = [16, 25];
         $this->beConstructedWith($items);
-        $this->macro('some', function ($callback) {
-            return !! $this->first(function ($value, $key) use ($callback) {
-                return $callback($value, $key);
+        $this->macro('squareRoot', function() {
+            return $this->map(function($number) {
+                return (int)sqrt($number);
             });
         });
-        $this->some(function ($value) {
-            return $value > 2;
-        })->shouldReturn(true);
-        $this->some(function ($value) {
-            return $value > 5;
-        })->shouldReturn(false);
+        $this->squareRoot()->toArray()->shouldReturn([4, 5]);
     }
 }
