@@ -164,6 +164,6 @@ class StrSpec extends ObjectBehavior
         $this->macro('bananas', function () {
             return 'bananas';
         });
-        $this->bananas()->__toString()->shouldReturn('bananas');
+        $this->bananas()->shouldReturn('bananas');
     }
 }

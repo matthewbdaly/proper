@@ -18,10 +18,10 @@ trait IsMacroable
         }
 
         if (is_callable(static::$macros[$method])) {
-            return new static(call_user_func_array(static::$macros[$method]->bindTo($this, static::class), $parameters));
+            return call_user_func_array(static::$macros[$method]->bindTo($this, static::class), $parameters);
         }
 
-        return new static(call_user_func_array(static::$macros[$method], $parameters));
+        return call_user_func_array(static::$macros[$method], $parameters);
     }
 
     protected function hasMacro(string $name)
