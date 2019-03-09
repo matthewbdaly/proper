@@ -473,4 +473,16 @@ class CollectionSpec extends ObjectBehavior
         });
         $this->squareRoot()->toArray()->shouldReturn([4, 5]);
     }
+
+    function it_supports_static_macros()
+    {
+        Collection::macro('squareRoot', function() {
+            return $this->map(function($number) {
+                return (int)sqrt($number);
+            });
+        });
+        $items = [16, 25];
+        $this->beConstructedWith($items);
+        $this->squareRoot()->toArray()->shouldReturn([4, 5]);
+    }
 }

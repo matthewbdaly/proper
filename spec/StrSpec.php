@@ -166,4 +166,14 @@ class StrSpec extends ObjectBehavior
         });
         $this->bananas()->shouldReturn('bananas');
     }
+
+    function it_supports_static_macros()
+    {
+        Str::macro('bananas', function () {
+            return 'bananas';
+        });
+        $str = 'I am the very model of a modern major general  ';
+        $this->beConstructedWith($str);
+        $this->bananas()->shouldReturn('bananas');
+    }
 }
