@@ -158,4 +158,12 @@ class StrSpec extends ObjectBehavior
         $this->beConstructedWith($str);
         $this->seek(2)->current()->shouldReturn("a");
     }
+
+    function it_supports_macros()
+    {
+        $this->macro('bananas', function () {
+            return 'bananas';
+        });
+        $this->bananas()->__toString()->shouldReturn('bananas');
+    }
 }

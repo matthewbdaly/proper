@@ -17,11 +17,11 @@ trait IsMacroable
             throw new \BadMethodCallException("Method {$method} does not exist.");
         }
 
-        if (static::$macros[$method] instanceof Closure) {
-            return call_user_func_array(static::$macros[$method]->bindTo($this, static::class), $parameters);
+        if (is_callable(static::$macros[$method])) {
+            return new static(call_user_func_array(static::$macros[$method]->bindTo($this, static::class), $parameters));
         }
 
-        return call_user_func_array(static::$macros[$method], $parameters);
+        return new static(call_user_func_array(static::$macros[$method], $parameters));
     }
 
     protected function hasMacro(string $name)
