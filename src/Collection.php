@@ -1,4 +1,6 @@
-<?php declare(strict_types = 1);
+<?php
+
+declare(strict_types=1);
 
 namespace Matthewbdaly\Proper;
 
@@ -16,7 +18,8 @@ use Matthewbdaly\Proper\Traits\IsMacroable;
  */
 class Collection implements Countable, ArrayAccess, SeekableIterator, JsonSerializable, Collectable
 {
-    use IsMacroable, IsCollection;
+    use IsMacroable;
+    use IsCollection;
 
     /**
      * Constructor

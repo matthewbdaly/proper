@@ -1,4 +1,6 @@
-<?php declare(strict_types=1);
+<?php
+
+declare(strict_types=1);
 
 namespace Matthewbdaly\Proper\Traits;
 
@@ -391,7 +393,7 @@ trait IsCollection
      */
     public function flatten()
     {
-        $return = array();
+        $return = [];
         array_walk_recursive($this->items, function ($a) use (&$return) {
             $return[] = $a;
         });

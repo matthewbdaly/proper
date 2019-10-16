@@ -1,4 +1,6 @@
-<?php declare(strict_types = 1);
+<?php
+
+declare(strict_types=1);
 
 namespace Matthewbdaly\Proper;
 
@@ -14,7 +16,8 @@ use Matthewbdaly\Proper\Traits\IsMacroable;
  */
 class Str implements Countable, ArrayAccess, SeekableIterator, Stringable
 {
-    use IsMacroable, IsString;
+    use IsMacroable;
+    use IsString;
 
     /**
      * String
