@@ -3,4 +3,4 @@ suites:
         namespace: Matthewbdaly\Proper
         psr4_prefix: Matthewbdaly\Proper
 extensions:
-  LeanPHP\PhpSpec\CodeCoverage\CodeCoverageExtension: ~
+  FriendsOfPhpSpec\PhpSpec\CodeCoverage\CodeCoverageExtension: ~
